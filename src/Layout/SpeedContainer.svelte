@@ -22,19 +22,15 @@
 			on:change={(event) => onSelectPlanet(event.currentTarget.value)}
 		>
 			<option value="moon">Moon</option>
-			<option value="uran">Uran</option>
+			<option value="mars">Mars</option>
 			<option value="jupiter">Jupiter</option>
 		</select>
 	</div>
 	<div class="earth" on:click={onClickEarth} on:keypress={onClickEarth}>
 		<div class="light" />
 	</div>
-	<PlanetObject
-		width={currentPlanet.width}
-		height={currentPlanet.height}
-		planet={currentPlanet}
-	/>
-	<div class="moon" />
+	<PlanetObject planet={currentPlanet} />
+	<!-- <div class="moon" /> -->
 </div>
 
 <style>

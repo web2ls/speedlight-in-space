@@ -1,14 +1,17 @@
 {
   "moon": {
-    "width": "50px",
-    "height": "50px"
+    "width": "15px",
+    "height": "15px",
+    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-3474691-png.png"
   },
-  "uran": {
-    "width": "40px",
-    "height": "40px"
+  "mars": {
+    "width": "25px",
+    "height": "25px",
+    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-6728909-png.png"
   },
   "jupiter": {
-    "width": "30px",
-    "height": "30px"
+    "width": "70px",
+    "height": "70px",
+    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-6293603-png.png"
   }
 }

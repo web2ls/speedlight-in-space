@@ -1,13 +1,15 @@
 <script>
-	export let width;
-	export let height;
 	export let planet;
-	console.log(planet);
 </script>
 
 <div
 	class="planet-object"
-	style="width: {planet.width}; height: {planet.height}"
->
-	Moon
-</div>
+	style="width: {planet.width}; height: {planet.height}; background: url({planet.image}) no-repeat center"
+/>
+
+<style>
+	.planet-object {
+		background-size: cover;
+		border-radius: 50%;
+	}
+</style>
