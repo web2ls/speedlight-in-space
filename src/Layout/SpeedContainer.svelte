@@ -1,10 +1,10 @@
 <script>
 	import PlanetObject from '../Components/PlanetObject.svelte';
+	import LightSwitcher from '../Components/LightSwitcher.svelte';
 
 	import planetObjects from '../assets/data/planetObjects.json';
 
-	console.log(planetObjects);
-	console.log(planetObjects['moon']);
+	let lightSwitcher = false;
 	let currentPlanet = planetObjects['moon'];
 
 	const onSelectPlanet = (name) => {
@@ -13,6 +13,11 @@
 
 	const onClickEarth = () => {
 		console.log('yep');
+	};
+
+	const onLightSwitcherClick = () => {
+		console.log('switcher click');
+		lightSwitcher = !lightSwitcher;
 	};
 </script>
 
@@ -26,11 +31,14 @@
 			<option value="jupiter">Jupiter</option>
 		</select>
 	</div>
+
+	<LightSwitcher active={lightSwitcher} onClick={onLightSwitcherClick} />
+
 	<div class="earth" on:click={onClickEarth} on:keypress={onClickEarth}>
 		<div class="light" />
 	</div>
+
 	<PlanetObject planet={currentPlanet} />
-	<!-- <div class="moon" /> -->
 </div>
 
 <style>
