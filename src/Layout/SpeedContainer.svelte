@@ -1,23 +1,35 @@
 <script>
 	import PlanetObject from '../Components/PlanetObject.svelte';
 	import LightSwitcher from '../Components/LightSwitcher.svelte';
+	import Light from '../Components/Light.svelte';
 
 	import planetObjects from '../assets/data/planetObjects.json';
 
 	let lightSwitcher = false;
 	let currentPlanet = planetObjects['moon'];
+	let earthElement;
+	let planetElement;
+	let lightElement;
 
 	const onSelectPlanet = (name) => {
 		currentPlanet = planetObjects[name];
 	};
 
-	const onClickEarth = () => {
-		console.log('yep');
+	const moveLightTo = (value) => {
+		lightElement.style.transform = `translateX(${value}px)`;
+	};
+
+	const calculateDistanceBetweenElements = () => {
+		const earthRect = earthElement.getBoundingClientRect();
+		const planetRect = planetElement.getBoundingClientRect();
+		return planetRect.left - earthRect.left;
 	};
 
 	const onLightSwitcherClick = () => {
-		console.log('switcher click');
 		lightSwitcher = !lightSwitcher;
+
+		const dist = calculateDistanceBetweenElements();
+		moveLightTo(dist);
 	};
 </script>
 
@@ -34,11 +46,11 @@
 
 	<LightSwitcher active={lightSwitcher} onClick={onLightSwitcherClick} />
 
-	<div class="earth" on:click={onClickEarth} on:keypress={onClickEarth}>
-		<div class="light" />
+	<div class="earth" bind:this={earthElement}>
+		<Light active={lightSwitcher} bind:ref={lightElement} />
 	</div>
 
-	<PlanetObject planet={currentPlanet} />
+	<PlanetObject planet={currentPlanet} bind:ref={planetElement} />
 </div>
 
 <style>
@@ -74,19 +86,6 @@
 			no-repeat center;
 		background-size: cover;
 		border-radius: 50%;
-	}
-
-	.light {
-		width: 10px;
-		height: 10px;
-		background: transparent;
-		background-size: cover;
-		border-radius: 50%;
-		transition: transform 1.28s linear;
-	}
-
-	.active-light {
-		background: #fff;
 	}
 
 	.object-selector {
