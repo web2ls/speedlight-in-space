@@ -1,26 +1,26 @@
 <script>
-	import { fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
-	export let active;
 	export let distance;
 
 	let ref;
+	let timing = 1.28;
 
-	const moveLightTo = () => {
-		console.log(ref);
-		ref.style.transform = `translateX(${distance}px)`;
-	};
-
-	// TODO: make animation as custom transition (https://css-tricks.com/making-your-first-custom-svelte-transition/)
+	onMount(() => {
+		// TODO: raname this animation
+		const newspaperSpinning = [
+			{ transform: 'translateX(0)' },
+			{ transform: `translateX(${distance}px)` },
+			{ transform: 'translateX(0)' },
+		];
+		ref.animate(newspaperSpinning, {
+			duration: timing * 1000 * 2,
+			iterations: Infinity,
+		});
+	});
 </script>
 
-{#if active}
-	<div
-		transition:fly={{ x: -200 }}
-		class="light {active ? 'visible' : ''}"
-		bind:this={ref}
-	/>
-{/if}
+<div class="light" bind:this={ref} />
 
 <style>
 	.light {
@@ -29,17 +29,5 @@
 		background: #fff;
 		background-size: cover;
 		border-radius: 50%;
-
-		/* transition: transform 1.28s linear; */
 	}
-
-	.visible {
-		background: #fff;
-	}
-
-	/* .active {
-		transform: translateX(200px);
-	} */
-
-	/* Add animation based on transition */
 </style>

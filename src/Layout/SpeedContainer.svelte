@@ -9,15 +9,10 @@
 	let currentPlanet = planetObjects['moon'];
 	let earthElement;
 	let planetElement;
-	// let lightElement;
 
 	const onSelectPlanet = (name) => {
 		currentPlanet = planetObjects[name];
 	};
-
-	// const moveLightTo = (value) => {
-	// 	lightElement.style.transform = `translateX(${value}px)`;
-	// };
 
 	const calculateDistanceBetweenElements = () => {
 		const earthRect = earthElement.getBoundingClientRect();
@@ -27,9 +22,6 @@
 
 	const onLightSwitcherClick = () => {
 		lightSwitcher = !lightSwitcher;
-
-		// const dist = calculateDistanceBetweenElements();
-		// moveLightTo(dist);
 	};
 </script>
 
@@ -47,7 +39,9 @@
 	<LightSwitcher active={lightSwitcher} onClick={onLightSwitcherClick} />
 
 	<div class="earth" bind:this={earthElement}>
-		<Light active={lightSwitcher} distance={222} />
+		{#if lightSwitcher}
+			<Light distance={calculateDistanceBetweenElements()} />
+		{/if}
 	</div>
 
 	<PlanetObject planet={currentPlanet} bind:ref={planetElement} />
