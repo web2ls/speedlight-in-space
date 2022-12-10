@@ -11,7 +11,9 @@
 
 <style>
 	.planet-object {
+		position: relative;
 		background-size: cover;
 		border-radius: 50%;
+		z-index: 1;
 	}
 </style>

@@ -45,10 +45,13 @@
 	</div>
 
 	<PlanetObject planet={currentPlanet} bind:ref={planetElement} />
+
+	<div class="blackground" />
 </div>
 
 <style>
 	.speed-container {
+		position: relative;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
@@ -62,6 +65,7 @@
 	}
 
 	.earth {
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -71,6 +75,7 @@
 			no-repeat center;
 		background-size: cover;
 		border-radius: 50%;
+		z-index: 1;
 	}
 
 	.moon {
@@ -86,5 +91,16 @@
 		position: absolute;
 		top: 5px;
 		left: 10px;
+		z-index: 1;
+	}
+
+	.blackground {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.4);
+		z-index: 0;
 	}
 </style>
