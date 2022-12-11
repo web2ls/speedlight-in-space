@@ -3,15 +3,15 @@
 	import LightSwitcher from '../Components/LightSwitcher.svelte';
 	import Light from '../Components/Light.svelte';
 
-	import planetObjects from '../assets/data/planetObjects.json';
+	import planetObjects from '../assets/data/objects.json';
 
 	let lightSwitcher = false;
-	let currentPlanet = planetObjects['moon'];
+	let currentPlanet = planetObjects[0];
 	let earthElement;
 	let planetElement;
 
-	const onSelectPlanet = (name) => {
-		currentPlanet = planetObjects[name];
+	const onSelectPlanet = (id) => {
+		currentPlanet = planetObjects.find((x) => x.id === id);
 	};
 
 	const calculateDistanceBetweenElements = () => {
@@ -30,9 +30,9 @@
 		<select
 			on:change={(event) => onSelectPlanet(event.currentTarget.value)}
 		>
-			<option value="moon">Moon</option>
-			<option value="mars">Mars</option>
-			<option value="jupiter">Jupiter</option>
+			{#each planetObjects as planet}
+				<option value={planet.id}>{planet.label}</option>
+			{/each}
 		</select>
 	</div>
 
