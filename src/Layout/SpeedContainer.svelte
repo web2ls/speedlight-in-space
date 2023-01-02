@@ -59,8 +59,7 @@
 		width: 100%;
 		height: 100vh;
 		position: relative;
-		background: url(https://images.webfrontier.ru/pexels-hristo-fidanov-1252890.jpg)
-			no-repeat center;
+		background: url(background.jpg) no-repeat center;
 		background-size: cover;
 	}
 
@@ -69,22 +68,12 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 50px;
-		height: 50px;
-		background: url(https://images.webfrontier.ru/image-from-rawpixel-id-6293608-png.png)
-			no-repeat center;
+		width: 100px;
+		height: 100px;
+		background: url(earth.png) no-repeat center;
 		background-size: cover;
 		border-radius: 50%;
-		z-index: 1;
-	}
-
-	.moon {
-		width: 50px;
-		height: 50px;
-		background: url(https://images.webfrontier.ru/image-from-rawpixel-id-3474691-png.png)
-			no-repeat center;
-		background-size: cover;
-		border-radius: 50%;
+		z-index: 10;
 	}
 
 	.object-selector {

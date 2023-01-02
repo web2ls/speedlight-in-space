@@ -1,64 +1,64 @@
 [
   {
     "id": "moon",
-    "width": "15px",
-    "height": "15px",
+    "width": "25px",
+    "height": "25px",
     "label": "Moon",
     "image": "moon"
   },
   {
     "id": "mercury",
-    "width": "15px",
-    "height": "15px",
+    "width": "33px",
+    "height": "33px",
     "label": "Mercury",
     "image": "mercury"
   },
   {
     "id": "venus",
-    "width": "15px",
-    "height": "15px",
+    "width": "90px",
+    "height": "90px",
     "label": "Venus",
     "image": "venus"
   },
   {
     "id": "mars",
-    "width": "15px",
-    "height": "15px",
+    "width": "50px",
+    "height": "50px",
     "label": "Mars",
     "image": "mars"
   },
   {
     "id": "jupiter",
-    "width": "15px",
-    "height": "15px",
+    "width": "300px",
+    "height": "300px",
     "label": "Jupiter",
     "image": "jupiter"
   },
   {
     "id": "saturn",
-    "width": "15px",
-    "height": "15px",
+    "width": "650px",
+    "height": "250px",
     "label": "Saturn",
     "image": "saturn"
   },
   {
     "id": "uranus",
-    "width": "15px",
-    "height": "15px",
+    "width": "180px",
+    "height": "180px",
     "label": "Uranus",
     "image": "uranus"
   },
   {
     "id": "neptune",
-    "width": "15px",
-    "height": "15px",
+    "width": "150px",
+    "height": "150px",
     "label": "Neptune",
     "image": "neptune"
   },
   {
     "id": "pluto",
-    "width": "15px",
-    "height": "15px",
+    "width": "25px",
+    "height": "25px",
     "label": "Pluto",
     "image": "pluto"
   }
