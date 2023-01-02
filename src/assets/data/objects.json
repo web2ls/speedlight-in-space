@@ -4,62 +4,62 @@
     "width": "15px",
     "height": "15px",
     "label": "Moon",
-    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-3474691-png.png"
+    "image": "moon"
   },
   {
     "id": "mercury",
     "width": "15px",
     "height": "15px",
     "label": "Mercury",
-    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-3474691-png.png"
+    "image": "mercury"
   },
   {
-    "id": "Venus",
+    "id": "venus",
     "width": "15px",
     "height": "15px",
     "label": "Venus",
-    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-3474691-png.png"
+    "image": "venus"
   },
   {
-    "id": "Mars",
+    "id": "mars",
     "width": "15px",
     "height": "15px",
     "label": "Mars",
-    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-6728909-png.png"
+    "image": "mars"
   },
   {
     "id": "jupiter",
     "width": "15px",
     "height": "15px",
     "label": "Jupiter",
-    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-6293603-png.png"
+    "image": "jupiter"
   },
   {
     "id": "saturn",
     "width": "15px",
     "height": "15px",
     "label": "Saturn",
-    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-3474691-png.png"
+    "image": "saturn"
   },
   {
     "id": "uranus",
     "width": "15px",
     "height": "15px",
     "label": "Uranus",
-    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-3474691-png.png"
+    "image": "uranus"
   },
   {
     "id": "neptune",
     "width": "15px",
     "height": "15px",
     "label": "Neptune",
-    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-3474691-png.png"
+    "image": "neptune"
   },
   {
     "id": "pluto",
     "width": "15px",
     "height": "15px",
     "label": "Pluto",
-    "image": "https://images.webfrontier.ru/image-from-rawpixel-id-3474691-png.png"
+    "image": "pluto"
   }
 ]
