@@ -17,7 +17,7 @@
 	const calculateDistanceBetweenElements = () => {
 		const earthRect = earthElement.getBoundingClientRect();
 		const planetRect = planetElement.getBoundingClientRect();
-		return planetRect.left - earthRect.left;
+		return planetRect.left - earthRect.right;
 	};
 
 	const onLightSwitcherClick = () => {
@@ -66,7 +66,7 @@
 	.earth {
 		position: relative;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: center;
 		width: 100px;
 		height: 100px;

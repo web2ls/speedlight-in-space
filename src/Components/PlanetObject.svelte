@@ -5,7 +5,7 @@
 
 <div
 	class="planet-object"
-	style="width: {planet.width}; height: {planet.height}; background: url({planet.image}.png) no-repeat center"
+	style="width: {planet.width}px; height: {planet.height}px; background: url({planet.image}.png) no-repeat center"
 	bind:this={ref}
 />
 
