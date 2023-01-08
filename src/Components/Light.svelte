@@ -2,19 +2,18 @@
 	import { onMount } from 'svelte';
 
 	export let distance;
+	export let timeTo;
 
 	let ref;
-	let timing = 1.28;
 
 	onMount(() => {
-		// TODO: raname this animation
-		const newspaperSpinning = [
+		const lightTransition = [
 			{ transform: 'translateX(0)' },
 			{ transform: `translateX(${distance}px)` },
 			{ transform: 'translateX(0)' },
 		];
-		ref.animate(newspaperSpinning, {
-			duration: timing * 1000 * 2,
+		ref.animate(lightTransition, {
+			duration: timeTo * 1000,
 			iterations: Infinity,
 		});
 	});

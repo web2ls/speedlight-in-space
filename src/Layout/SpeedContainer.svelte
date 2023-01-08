@@ -11,7 +11,12 @@
 	let planetElement;
 
 	const onSelectPlanet = (id) => {
+		if (lightSwitcher) {
+			lightSwitcher = false;
+		}
+
 		currentPlanet = planetObjects.find((x) => x.id === id);
+		// lightSwitcher = true;
 	};
 
 	const calculateDistanceBetweenElements = () => {
@@ -40,7 +45,10 @@
 
 	<div class="earth" bind:this={earthElement}>
 		{#if lightSwitcher}
-			<Light distance={calculateDistanceBetweenElements()} />
+			<Light
+				distance={calculateDistanceBetweenElements()}
+				timeTo={currentPlanet.timeTo}
+			/>
 		{/if}
 	</div>
 

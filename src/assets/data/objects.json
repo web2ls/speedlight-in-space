@@ -4,62 +4,71 @@
     "width": "25",
     "height": "25",
     "label": "Moon",
-    "image": "moon"
+    "image": "moon",
+    "timeTo": 1.28
   },
   {
     "id": "mercury",
     "width": "33",
     "height": "33",
     "label": "Mercury",
-    "image": "mercury"
+    "image": "mercury",
+    "timeTo": 305.6
   },
   {
     "id": "venus",
     "width": "90",
     "height": "90",
     "label": "Venus",
-    "image": "venus"
+    "image": "venus",
+    "timeTo": 138
   },
   {
     "id": "mars",
     "width": "50",
     "height": "50",
     "label": "Mars",
-    "image": "mars"
+    "image": "mars",
+    "timeTo": 261.1
   },
   {
     "id": "jupiter",
     "width": "300",
     "height": "300",
     "label": "Jupiter",
-    "image": "jupiter"
+    "image": "jupiter",
+    "timeTo": 2095.7
   },
   {
     "id": "saturn",
     "width": "640",
     "height": "470",
     "label": "Saturn",
-    "image": "saturn"
+    "image": "saturn",
+    "timeTo": 4250
   },
   {
     "id": "uranus",
     "width": "180",
     "height": "180",
     "label": "Uranus",
-    "image": "uranus"
+    "image": "uranus",
+    "timeTo": 9079.8
   },
   {
     "id": "neptune",
     "width": "150",
     "height": "150",
     "label": "Neptune",
-    "image": "neptune"
+    "image": "neptune",
+    "timeTo": 14504.6
   },
   {
     "id": "pluto",
     "width": "25",
     "height": "25",
     "label": "Pluto",
-    "image": "pluto"
+    "image": "pluto",
+    "timeTo": 14266.6
   }
 ]
