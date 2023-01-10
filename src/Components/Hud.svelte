@@ -6,8 +6,8 @@
 	<div class="name">{currentPlanet.label.toUpperCase()}</div>
 
 	<div class="hud-item">
-		<div class="header">Distance to Planet</div>
-		<div class="value">8569 000 km</div>
+		<div class="header">Distance to</div>
+		<div class="value">{currentPlanet.distanceTo} km</div>
 	</div>
 
 	<div class="hud-item">
@@ -54,7 +54,7 @@
 
 	.value {
 		font-size: 16px;
-		font-weight: 300;
+		font-weight: 400;
 		color: var(--base-color);
 		letter-spacing: 3px;
 	}

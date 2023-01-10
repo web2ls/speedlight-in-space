@@ -5,7 +5,8 @@
     "height": "25",
     "label": "Moon",
     "image": "moon",
-    "timeTo": 1.28
+    "timeTo": 1.28,
+    "distanceTo": "384 400"
   },
   {
     "id": "mercury",
@@ -13,7 +14,8 @@
     "height": "33",
     "label": "Mercury",
     "image": "mercury",
-    "timeTo": 305.6
+    "timeTo": 305.6,
+    "distanceTo": "91 691 000"
   },
   {
     "id": "venus",
@@ -21,7 +23,8 @@
     "height": "90",
     "label": "Venus",
     "image": "venus",
-    "timeTo": 138
+    "timeTo": 138,
+    "distanceTo": "41 400 000"
   },
   {
     "id": "mars",
@@ -29,7 +32,8 @@
     "height": "50",
     "label": "Mars",
     "image": "mars",
-    "timeTo": 261.1
+    "timeTo": 261.1,
+    "distanceTo": "78 340 000"
   },
   {
     "id": "jupiter",
@@ -37,7 +41,8 @@
     "height": "300",
     "label": "Jupiter",
     "image": "jupiter",
-    "timeTo": 2095.7
+    "timeTo": 2095.7,
+    "distanceTo": "628 730 000"
   },
   {
     "id": "saturn",
@@ -45,7 +50,8 @@
     "height": "470",
     "label": "Saturn",
     "image": "saturn",
-    "timeTo": 4250
+    "timeTo": 4250,
+    "distanceTo": "1 275 000 000"
   },
   {
     "id": "uranus",
@@ -53,7 +59,8 @@
     "height": "180",
     "label": "Uranus",
     "image": "uranus",
-    "timeTo": 9079.8
+    "timeTo": 9079.8,
+    "distanceTo": "2 723 950 000"
   },
   {
     "id": "neptune",
@@ -61,7 +68,8 @@
     "height": "150",
     "label": "Neptune",
     "image": "neptune",
-    "timeTo": 14504.6
+    "timeTo": 14504.6,
+    "distanceTo": "4 351 400 000"
   },
   {
     "id": "pluto",
@@ -69,6 +77,7 @@
     "height": "25",
     "label": "Pluto",
     "image": "pluto",
-    "timeTo": 14266.6
+    "timeTo": 14266.6,
+    "distanceTo": "4 280 000 000"
   }
 ]
