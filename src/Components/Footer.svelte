@@ -2,22 +2,22 @@
 	export let currentPlanet;
 </script>
 
-<div class="hud">
+<div class="footer">
 	<div class="name">{currentPlanet.label.toUpperCase()}</div>
 
-	<div class="hud-item">
+	<div class="footer-item">
 		<div class="header">Distance to</div>
 		<div class="value">{currentPlanet.distanceTo} km</div>
 	</div>
 
-	<div class="hud-item">
+	<div class="footer-item">
 		<div class="header">Speed controls</div>
 		<div class="value">1x 2x 5x</div>
 	</div>
 </div>
 
 <style>
-	.hud {
+	.footer {
 		position: fixed;
 		left: 0;
 		bottom: 0;
@@ -33,7 +33,7 @@
 		overflow: hidden;
 	}
 
-	.hud-item {
+	.footer-item {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

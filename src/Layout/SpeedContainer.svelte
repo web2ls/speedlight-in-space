@@ -2,7 +2,7 @@
 	import PlanetObject from '../Components/PlanetObject.svelte';
 	import LightSwitcher from '../Components/LightSwitcher.svelte';
 	import Light from '../Components/Light.svelte';
-	import Hud from '../Components/Hud.svelte';
+	import Hud from '../Components/Footer.svelte';
 
 	import planetObjects from '../assets/data/objects.json';
 
