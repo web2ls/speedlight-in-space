@@ -2,7 +2,9 @@
 	import PlanetObject from '../Components/PlanetObject.svelte';
 	import LightSwitcher from '../Components/LightSwitcher.svelte';
 	import Light from '../Components/Light.svelte';
-	import Hud from '../Components/Footer.svelte';
+	import Footer from '../Components/Footer.svelte';
+	import PlanetSelector from '../Components/PlanetSelector.svelte';
+	import Hud from '../Components/HUD.svelte';
 
 	import planetObjects from '../assets/data/objects.json';
 
@@ -34,7 +36,8 @@
 </script>
 
 <div class="speed-container">
-	<div class="object-selector">
+	<Hud {lightSwitcher} {onLightSwitcherClick} />
+	<!-- <div class="object-selector">
 		<select
 			on:change={(event) => onSelectPlanet(event.currentTarget.value)}
 		>
@@ -42,9 +45,7 @@
 				<option value={planet.id}>{planet.label}</option>
 			{/each}
 		</select>
-	</div>
-
-	<LightSwitcher active={lightSwitcher} onClick={onLightSwitcherClick} />
+	</div> -->
 
 	<div class="earth" bind:this={earthElement}>
 		{#if lightSwitcher}
@@ -59,7 +60,7 @@
 
 	<div class="blackground" />
 
-	<Hud {currentPlanet} />
+	<Footer {currentPlanet} />
 </div>
 
 <style>

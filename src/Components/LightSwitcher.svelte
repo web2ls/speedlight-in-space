@@ -51,10 +51,7 @@
 
 <style>
 	.light-switcher {
-		position: absolute;
-		top: 5px;
-		left: 50%;
-		transform: translateX(-50%);
+		position: relative;
 		width: 40px;
 		height: 40px;
 		display: flex;
