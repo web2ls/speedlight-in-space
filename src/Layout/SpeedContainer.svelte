@@ -1,27 +1,25 @@
 <script>
 	import PlanetObject from '../Components/PlanetObject.svelte';
-	import LightSwitcher from '../Components/LightSwitcher.svelte';
 	import Light from '../Components/Light.svelte';
 	import Footer from '../Components/Footer.svelte';
-	import PlanetSelector from '../Components/PlanetSelector.svelte';
 	import Hud from '../Components/HUD.svelte';
 
 	import planetObjects from '../assets/data/objects.json';
 
-	// TODO: добавить контроль светом в виде ЧБ иконки с подсветкой
 	// TODO: возможно стоит вывести иконку с информацией по которой можно переходить на роут с информацией о планете
 
 	let lightSwitcher = false;
 	let currentPlanet = planetObjects[0];
 	let earthElement;
 	let planetElement;
+	let selectedPlanet = planetObjects[0];
 
-	const onSelectPlanet = (id) => {
+	const changePlanet = (id) => {
 		if (lightSwitcher) {
 			lightSwitcher = false;
 		}
 
-		currentPlanet = planetObjects.find((x) => x.id === id);
+		selectedPlanet = planetObjects.find((x) => x.id === id);
 	};
 
 	const calculateDistanceBetweenElements = () => {
@@ -36,31 +34,28 @@
 </script>
 
 <div class="speed-container">
-	<Hud {lightSwitcher} {onLightSwitcherClick} />
-	<!-- <div class="object-selector">
-		<select
-			on:change={(event) => onSelectPlanet(event.currentTarget.value)}
-		>
-			{#each planetObjects as planet}
-				<option value={planet.id}>{planet.label}</option>
-			{/each}
-		</select>
-	</div> -->
+	<Hud
+		{lightSwitcher}
+		{onLightSwitcherClick}
+		{planetObjects}
+		{selectedPlanet}
+		{changePlanet}
+	/>
 
 	<div class="earth" bind:this={earthElement}>
 		{#if lightSwitcher}
 			<Light
 				distance={calculateDistanceBetweenElements()}
-				timeTo={currentPlanet.timeTo}
+				timeTo={selectedPlanet.timeTo}
 			/>
 		{/if}
 	</div>
 
-	<PlanetObject planet={currentPlanet} bind:ref={planetElement} />
+	<PlanetObject planet={selectedPlanet} bind:ref={planetElement} />
 
 	<div class="blackground" />
 
-	<Footer {currentPlanet} />
+	<Footer {selectedPlanet} />
 </div>
 
 <style>
@@ -88,13 +83,6 @@
 		background-size: cover;
 		border-radius: 50%;
 		z-index: 10;
-	}
-
-	.object-selector {
-		position: absolute;
-		top: 5px;
-		left: 10px;
-		z-index: 1;
 	}
 
 	.blackground {

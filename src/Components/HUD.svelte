@@ -4,10 +4,13 @@
 
 	export let lightSwitcher;
 	export let onLightSwitcherClick;
+	export let planetObjects;
+	export let selectedPlanet;
+	export let changePlanet;
 </script>
 
 <div class="hud">
-	<PlanetSelector />
+	<PlanetSelector planets={planetObjects} {selectedPlanet} {changePlanet} />
 	<LightSwitcher active={lightSwitcher} onClick={onLightSwitcherClick} />
 </div>
 

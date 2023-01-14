@@ -1,13 +1,13 @@
 <script>
-	export let currentPlanet;
+	export let selectedPlanet;
 </script>
 
 <div class="footer">
-	<div class="name">{currentPlanet.label.toUpperCase()}</div>
+	<div class="name">{selectedPlanet.label.toUpperCase()}</div>
 
 	<div class="footer-item">
 		<div class="header">Distance to</div>
-		<div class="value">{currentPlanet.distanceTo} km</div>
+		<div class="value">{selectedPlanet.distanceTo} km</div>
 	</div>
 
 	<div class="footer-item">
@@ -44,12 +44,14 @@
 		font-size: 24px;
 		font-weight: 700;
 		color: var(--orange);
+		letter-spacing: 1px;
 	}
 
 	.header {
 		font-size: 16px;
 		color: var(--orange);
 		font-weight: 700;
+		letter-spacing: 1px;
 	}
 
 	.value {
