@@ -3,9 +3,6 @@
 	export let selectedPlanet;
 	export let changePlanet;
 
-	console.log(selectedPlanet);
-
-	let filteredPlanets = planets.filter((x) => x.id !== selectedPlanet.id);
 	let isVisible = false;
 
 	function toggleList() {
@@ -24,7 +21,7 @@
 	</div>
 	{#if isVisible}
 		<ul class="planet-list">
-			{#each filteredPlanets as planet}
+			{#each planets as planet}
 				<li
 					class="planet-list__item"
 					on:click={() => onSelectPlanet(planet.id)}

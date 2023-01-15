@@ -9,9 +9,9 @@
 	// TODO: возможно стоит вывести иконку с информацией по которой можно переходить на роут с информацией о планете
 
 	let lightSwitcher = false;
-	let currentPlanet = planetObjects[0];
 	let earthElement;
 	let planetElement;
+	let planets = [...planetObjects].slice(1);
 	let selectedPlanet = planetObjects[0];
 
 	const changePlanet = (id) => {
@@ -20,6 +20,7 @@
 		}
 
 		selectedPlanet = planetObjects.find((x) => x.id === id);
+		planets = planetObjects.filter((x) => x.id !== id);
 	};
 
 	const calculateDistanceBetweenElements = () => {
@@ -37,7 +38,7 @@
 	<Hud
 		{lightSwitcher}
 		{onLightSwitcherClick}
-		{planetObjects}
+		{planets}
 		{selectedPlanet}
 		{changePlanet}
 	/>
