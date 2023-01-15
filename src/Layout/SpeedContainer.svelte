@@ -8,19 +8,25 @@
 
 	// TODO: возможно стоит вывести иконку с информацией по которой можно переходить на роут с информацией о планете
 
+	const timeSpeed = [1, 10, 100];
 	let lightSwitcher = false;
 	let earthElement;
 	let planetElement;
 	let planets = [...planetObjects].slice(1);
 	let selectedPlanet = planetObjects[0];
+	let selectedTimeSpeed = 1;
 
 	const changePlanet = (id) => {
-		if (lightSwitcher) {
-			lightSwitcher = false;
-		}
-
 		selectedPlanet = planetObjects.find((x) => x.id === id);
 		planets = planetObjects.filter((x) => x.id !== id);
+
+		if (lightSwitcher) {
+			lightSwitcher = false;
+			let timerId = setTimeout(() => {
+				lightSwitcher = true;
+				clearTimeout(timerId);
+			}, 300);
+		}
 	};
 
 	const calculateDistanceBetweenElements = () => {
@@ -31,6 +37,18 @@
 
 	const onLightSwitcherClick = () => {
 		lightSwitcher = !lightSwitcher;
+	};
+
+	const changeTimeSpeed = (value) => {
+		selectedTimeSpeed = value;
+
+		if (lightSwitcher) {
+			lightSwitcher = false;
+			let timerId = setTimeout(() => {
+				lightSwitcher = true;
+				clearTimeout(timerId);
+			}, 300);
+		}
 	};
 </script>
 
@@ -48,6 +66,7 @@
 			<Light
 				distance={calculateDistanceBetweenElements()}
 				timeTo={selectedPlanet.timeTo}
+				{selectedTimeSpeed}
 			/>
 		{/if}
 	</div>
@@ -56,7 +75,12 @@
 
 	<div class="blackground" />
 
-	<Footer {selectedPlanet} />
+	<Footer
+		{selectedPlanet}
+		{timeSpeed}
+		{selectedTimeSpeed}
+		{changeTimeSpeed}
+	/>
 </div>
 
 <style>

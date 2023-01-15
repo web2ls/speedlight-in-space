@@ -1,8 +1,11 @@
 <script>
+	// TODO: Для Луны убрать ускорение с высоким коэфф. так как и ткк слишком быстро
+
 	import { onMount } from 'svelte';
 
 	export let distance;
 	export let timeTo;
+	export let selectedTimeSpeed;
 
 	let ref;
 
@@ -13,7 +16,7 @@
 			{ transform: 'translateX(0)' },
 		];
 		ref.animate(lightTransition, {
-			duration: timeTo * 1000,
+			duration: (timeTo * 1000) / selectedTimeSpeed,
 			iterations: Infinity,
 		});
 	});
