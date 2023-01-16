@@ -1,12 +1,27 @@
 <script>
-	// TODO: Добавить время достижения в часах (например)
-	// TODO: Как варинт добавить динамическое значение в зависимости от выбранной скорости
-	// TODO: Отображать текущее значение скорости (света)
-	// TODO: Как вариант отображать его динамически в зависимости от выбранного режима
+	const SECONDS_IN_MINUTE = 60;
 	export let selectedPlanet;
 	export let timeSpeed;
 	export let selectedTimeSpeed;
 	export let changeTimeSpeed;
+
+	const formatSpeedValue = (value) => {
+		let result = '';
+		let counter = 0;
+
+		for (let i = value.length - 1; i >= 0; i--) {
+			if (counter < 3) {
+				result = value[i] + result;
+				counter++;
+			} else {
+				counter = 1;
+				result = ' ' + result;
+				result = value[i] + result;
+			}
+		}
+
+		return result;
+	};
 </script>
 
 <div class="footer">
@@ -15,6 +30,28 @@
 	<div class="footer-item">
 		<div class="header">Distance to</div>
 		<div class="value">{selectedPlanet.distanceTo} km</div>
+	</div>
+
+	<div class="footer-item">
+		<div class="header">Time to</div>
+		<div class="value">
+			{#if selectedTimeSpeed === 1}
+				{(selectedPlanet.timeTo / SECONDS_IN_MINUTE).toFixed(2)} minutes
+			{:else}
+				{(
+					selectedPlanet.timeTo /
+					SECONDS_IN_MINUTE /
+					selectedTimeSpeed
+				).toFixed(2)} minutes
+			{/if}
+		</div>
+	</div>
+
+	<div class="footer-item">
+		<div class="header">Light speed</div>
+		<div class="value">
+			{formatSpeedValue((300000 * selectedTimeSpeed).toString())} km/s
+		</div>
 	</div>
 
 	<div class="footer-item">
@@ -89,10 +126,11 @@
 
 	.time-speed__item {
 		margin-right: 10px;
-		padding: 5px;
+		padding: 1px 5px;
 		border: 2px solid transparent;
 		border-radius: 10px;
 		cursor: pointer;
+		transition: all 0.3s;
 	}
 
 	.time-speed__item.active {

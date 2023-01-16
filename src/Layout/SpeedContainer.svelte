@@ -25,7 +25,7 @@
 			let timerId = setTimeout(() => {
 				lightSwitcher = true;
 				clearTimeout(timerId);
-			}, 300);
+			}, 100);
 		}
 	};
 
@@ -47,7 +47,7 @@
 			let timerId = setTimeout(() => {
 				lightSwitcher = true;
 				clearTimeout(timerId);
-			}, 300);
+			}, 100);
 		}
 	};
 </script>

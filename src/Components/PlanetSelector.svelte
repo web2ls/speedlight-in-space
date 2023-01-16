@@ -1,4 +1,6 @@
 <script>
+	import { fade } from 'svelte/transition';
+
 	export let planets;
 	export let selectedPlanet;
 	export let changePlanet;
@@ -20,7 +22,7 @@
 		{selectedPlanet.label}
 	</div>
 	{#if isVisible}
-		<ul class="planet-list">
+		<ul class="planet-list" in:fade={{ delay: 100 }}>
 			{#each planets as planet}
 				<li
 					class="planet-list__item"

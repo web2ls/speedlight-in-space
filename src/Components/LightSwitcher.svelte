@@ -1,4 +1,6 @@
 <script>
+	import { fade } from 'svelte/transition';
+
 	export let active;
 	export let onClick;
 </script>
@@ -10,6 +12,7 @@
 >
 	{#if !active}
 		<svg
+			in:fade={{ delay: 100 }}
 			class="light-off"
 			enable-background="new 0 0 32 32"
 			height="32px"
@@ -30,6 +33,7 @@
 
 	{#if active}
 		<svg
+			in:fade={{ delay: 100 }}
 			class="light-on"
 			enable-background="new 0 0 32 32"
 			height="32px"
