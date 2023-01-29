@@ -82,4 +82,16 @@
 	.light-switcher.active svg {
 		fill: var(--orange);
 	}
+
+	@media only screen and (max-width: 1200px) and (orientation: landscape) {
+		.light-switcher {
+			width: 30px;
+			height: 30px;
+		}
+
+		.light-switcher svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
 </style>

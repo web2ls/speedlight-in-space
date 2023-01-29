@@ -8,13 +8,30 @@
 
 	// TODO: возможно стоит вывести иконку с информацией по которой можно переходить на роут с информацией о планете
 
-	const timeSpeed = [1, 10, 100];
+	const calculateTimeTo = () => {
+		let timeTo = null;
+
+		if (selectedTimeSpeed === 1) {
+			timeTo = `${(selectedPlanet.timeTo / 60).toFixed(2)} minutes`;
+		} else {
+			timeTo = `${(
+				selectedPlanet.timeTo /
+				60 /
+				selectedTimeSpeed
+			).toFixed(2)} minutes`;
+		}
+
+		return timeTo;
+	};
+
+	const timeSpeedList = [1, 10, 100];
 	let lightSwitcher = false;
 	let earthElement;
 	let planetElement;
 	let planets = [...planetObjects].slice(1);
 	let selectedPlanet = planetObjects[0];
 	let selectedTimeSpeed = 1;
+	let timeTo = calculateTimeTo();
 
 	const changePlanet = (id) => {
 		selectedPlanet = planetObjects.find((x) => x.id === id);
@@ -77,9 +94,10 @@
 
 	<Footer
 		{selectedPlanet}
-		{timeSpeed}
+		{timeSpeedList}
 		{selectedTimeSpeed}
 		{changeTimeSpeed}
+		{timeTo}
 	/>
 </div>
 

@@ -25,4 +25,11 @@
 		border: 1px solid var(--gray);
 		border-radius: 10px;
 	}
+
+	@media only screen and (max-width: 1200px) {
+		.hud {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
 </style>

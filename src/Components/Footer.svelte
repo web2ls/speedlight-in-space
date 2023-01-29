@@ -1,9 +1,14 @@
 <script>
+	// TODO: разделить футер на десктоп и мобильную версию
+	// TODO убрать компонент FooterItem и заменить его статикой
+	import FooterItem from './FooterItem.svelte';
+
 	const SECONDS_IN_MINUTE = 60;
 	export let selectedPlanet;
-	export let timeSpeed;
+	export let timeSpeedList;
 	export let selectedTimeSpeed;
 	export let changeTimeSpeed;
+	export let timeTo;
 
 	const formatSpeedValue = (value) => {
 		let result = '';
@@ -22,15 +27,32 @@
 
 		return result;
 	};
+
+	const calculateTimeTo = () => {
+		let timeTo = null;
+
+		if (selectedTimeSpeed === 1) {
+			timeTo = `${(selectedPlanet.timeTo / SECONDS_IN_MINUTE).toFixed(
+				2
+			)} minutes`;
+		} else {
+			timeTo = `${(
+				selectedPlanet.timeTo /
+				SECONDS_IN_MINUTE /
+				selectedTimeSpeed
+			).toFixed(2)} minutes`;
+		}
+
+		return timeTo;
+	};
 </script>
 
 <div class="footer">
 	<div class="name">{selectedPlanet.label.toUpperCase()}</div>
 
-	<div class="footer-item">
-		<div class="header">Distance to</div>
-		<div class="value">{selectedPlanet.distanceTo} km</div>
-	</div>
+	<FooterItem header="Distance to" value="{selectedPlanet.distanceTo} km" />
+
+	<FooterItem header="Time to" value={timeTo} />
 
 	<div class="footer-item">
 		<div class="header">Time to</div>
@@ -57,7 +79,7 @@
 	<div class="footer-item">
 		<div class="header">Speed control</div>
 		<div class="value time-speed">
-			{#each timeSpeed as value}
+			{#each timeSpeedList as value}
 				<div
 					on:click={() => changeTimeSpeed(value)}
 					on:keydown={() => changeTimeSpeed(value)}
@@ -141,5 +163,8 @@
 	.time-speed__item:hover {
 		border: 2px solid var(--base-color);
 		border-radius: 10px;
+	}
+
+	@media only screen and (max-width: 768px) {
 	}
 </style>
