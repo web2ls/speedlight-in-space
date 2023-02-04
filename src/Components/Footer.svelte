@@ -3,48 +3,12 @@
 	// TODO убрать компонент FooterItem и заменить его статикой
 	import FooterItem from './FooterItem.svelte';
 
-	const SECONDS_IN_MINUTE = 60;
 	export let selectedPlanet;
 	export let timeSpeedList;
 	export let selectedTimeSpeed;
 	export let changeTimeSpeed;
 	export let timeTo;
-
-	const formatSpeedValue = (value) => {
-		let result = '';
-		let counter = 0;
-
-		for (let i = value.length - 1; i >= 0; i--) {
-			if (counter < 3) {
-				result = value[i] + result;
-				counter++;
-			} else {
-				counter = 1;
-				result = ' ' + result;
-				result = value[i] + result;
-			}
-		}
-
-		return result;
-	};
-
-	const calculateTimeTo = () => {
-		let timeTo = null;
-
-		if (selectedTimeSpeed === 1) {
-			timeTo = `${(selectedPlanet.timeTo / SECONDS_IN_MINUTE).toFixed(
-				2
-			)} minutes`;
-		} else {
-			timeTo = `${(
-				selectedPlanet.timeTo /
-				SECONDS_IN_MINUTE /
-				selectedTimeSpeed
-			).toFixed(2)} minutes`;
-		}
-
-		return timeTo;
-	};
+	export let speedValue;
 </script>
 
 <div class="footer">
@@ -54,27 +18,7 @@
 
 	<FooterItem header="Time to" value={timeTo} />
 
-	<div class="footer-item">
-		<div class="header">Time to</div>
-		<div class="value">
-			{#if selectedTimeSpeed === 1}
-				{(selectedPlanet.timeTo / SECONDS_IN_MINUTE).toFixed(2)} minutes
-			{:else}
-				{(
-					selectedPlanet.timeTo /
-					SECONDS_IN_MINUTE /
-					selectedTimeSpeed
-				).toFixed(2)} minutes
-			{/if}
-		</div>
-	</div>
-
-	<div class="footer-item">
-		<div class="header">Light speed</div>
-		<div class="value">
-			{formatSpeedValue((300000 * selectedTimeSpeed).toString())} km/s
-		</div>
-	</div>
+	<FooterItem header="Light speed" value={speedValue} />
 
 	<div class="footer-item">
 		<div class="header">Speed control</div>

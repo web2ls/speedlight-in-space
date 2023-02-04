@@ -7,23 +7,26 @@
 	import planetObjects from '../assets/data/objects.json';
 
 	// TODO: возможно стоит вывести иконку с информацией по которой можно переходить на роут с информацией о планете
+	const formatSpeedValue = (value) => {
+		let result = '';
+		let counter = 0;
 
-	const calculateTimeTo = () => {
-		let timeTo = null;
-
-		if (selectedTimeSpeed === 1) {
-			timeTo = `${(selectedPlanet.timeTo / 60).toFixed(2)} minutes`;
-		} else {
-			timeTo = `${(
-				selectedPlanet.timeTo /
-				60 /
-				selectedTimeSpeed
-			).toFixed(2)} minutes`;
+		for (let i = value.length - 1; i >= 0; i--) {
+			if (counter < 3) {
+				result = value[i] + result;
+				counter++;
+			} else {
+				counter = 1;
+				result = ' ' + result;
+				result = value[i] + result;
+			}
 		}
 
-		return timeTo;
+		return result;
 	};
 
+	const SECONDS_IN_MINUTE = 60;
+	const LIGHT_SPEED = 300000;
 	const timeSpeedList = [1, 10, 100];
 	let lightSwitcher = false;
 	let earthElement;
@@ -31,11 +34,16 @@
 	let planets = [...planetObjects].slice(1);
 	let selectedPlanet = planetObjects[0];
 	let selectedTimeSpeed = 1;
-	let timeTo = calculateTimeTo();
+	let timeTo;
+	let speedValue;
+
+	updateTimeTo();
+	updateSpeedValue();
 
 	const changePlanet = (id) => {
 		selectedPlanet = planetObjects.find((x) => x.id === id);
 		planets = planetObjects.filter((x) => x.id !== id);
+		updateTimeTo();
 
 		if (lightSwitcher) {
 			lightSwitcher = false;
@@ -58,6 +66,8 @@
 
 	const changeTimeSpeed = (value) => {
 		selectedTimeSpeed = value;
+		updateTimeTo();
+		updateSpeedValue();
 
 		if (lightSwitcher) {
 			lightSwitcher = false;
@@ -67,6 +77,20 @@
 			}, 100);
 		}
 	};
+
+	function updateTimeTo() {
+		timeTo = `${(
+			selectedPlanet.timeTo /
+			SECONDS_IN_MINUTE /
+			selectedTimeSpeed
+		).toFixed(2)} minutes`;
+	}
+
+	function updateSpeedValue() {
+		speedValue = `${formatSpeedValue(
+			(LIGHT_SPEED * selectedTimeSpeed).toString()
+		)} km/s`;
+	}
 </script>
 
 <div class="speed-container">
@@ -98,6 +122,7 @@
 		{selectedTimeSpeed}
 		{changeTimeSpeed}
 		{timeTo}
+		{speedValue}
 	/>
 </div>
 

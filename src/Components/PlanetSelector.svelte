@@ -59,6 +59,8 @@
 		position: relative;
 		padding: 0;
 		text-align: center;
+		width: 100%;
+		height: 35px;
 	}
 
 	.planet-list {
