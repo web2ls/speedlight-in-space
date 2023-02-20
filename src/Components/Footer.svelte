@@ -14,11 +14,38 @@
 <div class="footer">
 	<div class="name">{selectedPlanet.label.toUpperCase()}</div>
 
-	<FooterItem header="Distance to" value="{selectedPlanet.distanceTo} km" />
+	<div class="desktop-stats">
+		<FooterItem
+			header="Distance to"
+			value="{selectedPlanet.distanceTo} km"
+		/>
 
-	<FooterItem header="Time to" value={timeTo} />
+		<FooterItem header="Time to" value={timeTo} />
 
-	<FooterItem header="Light speed" value={speedValue} />
+		<FooterItem header="Light speed" value={speedValue} />
+	</div>
+
+	<div class="mobile-stats">
+		<div class="slider-stats">
+			<svg viewBox="0 0 24 24"
+				><path
+					d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"
+				/><path
+					d="M13.293 7.293 8.586 12l4.707 4.707 1.414-1.414L11.414 12l3.293-3.293-1.414-1.414z"
+				/></svg
+			>
+		</div>
+		<div>Mobile stats</div>
+		<div class="slider-stats">
+			<svg viewBox="0 0 24 24"
+				><path
+					d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"
+				/><path
+					d="M9.293 8.707 12.586 12l-3.293 3.293 1.414 1.414L15.414 12l-4.707-4.707-1.414 1.414z"
+				/></svg
+			>
+		</div>
+	</div>
 
 	<div class="footer-item">
 		<div class="header">Speed control</div>
@@ -63,6 +90,7 @@
 	}
 
 	.name {
+		flex-shrink: 0;
 		font-size: 24px;
 		font-weight: 700;
 		color: var(--orange);
@@ -109,6 +137,35 @@
 		border-radius: 10px;
 	}
 
-	@media only screen and (max-width: 768px) {
+	.desktop-stats,
+	.mobile-stats {
+		flex-grow: 1;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.mobile-stats {
+		display: none;
+	}
+
+	.slider-stats {
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+
+	.slider-stats svg {
+		fill: var(--base-color);
+	}
+
+	@media only screen and (max-width: 1200px) {
+		.desktop-stats {
+			display: none;
+		}
+
+		.mobile-stats {
+			display: flex;
+		}
 	}
 </style>
