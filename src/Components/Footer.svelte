@@ -9,6 +9,32 @@
 	export let changeTimeSpeed;
 	export let timeTo;
 	export let speedValue;
+
+	let activeCarousel = 0;
+	$: statsList = [
+		{
+			header: 'Distance to',
+			value: `${selectedPlanet.distanceTo} km`,
+		},
+		{
+			header: 'Time to',
+			value: timeTo,
+		},
+		{
+			header: 'Light speed',
+			value: speedValue,
+		},
+	];
+
+	const next = () => {
+		if (activeCarousel + 1 > statsList.length - 1) activeCarousel = 0;
+		else activeCarousel += 1;
+	};
+
+	const prev = () => {
+		if (activeCarousel - 1 < 0) activeCarousel = statsList.length - 1;
+		else activeCarousel -= 1;
+	};
 </script>
 
 <div class="footer">
@@ -25,8 +51,8 @@
 		<FooterItem header="Light speed" value={speedValue} />
 	</div>
 
-	<div class="mobile-stats">
-		<div class="slider-stats">
+	<div class="tablet-stats">
+		<div class="slider-stats" on:click={prev} on:keydown={prev}>
 			<svg viewBox="0 0 24 24"
 				><path
 					d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"
@@ -35,8 +61,14 @@
 				/></svg
 			>
 		</div>
-		<div>Mobile stats</div>
-		<div class="slider-stats">
+		<div>
+			<svelte:component
+				this={FooterItem}
+				header={statsList[activeCarousel].header}
+				value={statsList[activeCarousel].value}
+			/>
+		</div>
+		<div class="slider-stats" on:click={next} on:keydown={next}>
 			<svg viewBox="0 0 24 24"
 				><path
 					d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"
@@ -138,14 +170,14 @@
 	}
 
 	.desktop-stats,
-	.mobile-stats {
+	.tablet-stats {
 		flex-grow: 1;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 	}
 
-	.mobile-stats {
+	.tablet-stats {
 		display: none;
 	}
 
@@ -159,12 +191,16 @@
 		fill: var(--base-color);
 	}
 
+	.slider-stats:hover svg {
+		fill: var(--orange);
+	}
+
 	@media only screen and (max-width: 1200px) {
 		.desktop-stats {
 			display: none;
 		}
 
-		.mobile-stats {
+		.tablet-stats {
 			display: flex;
 		}
 	}
