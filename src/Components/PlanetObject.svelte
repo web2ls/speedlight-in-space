@@ -4,8 +4,8 @@
 </script>
 
 <div
-	class="planet-object"
-	style="width: {planet.width}px; height: {planet.height}px; background: url({planet.image}.png) no-repeat center"
+	class="planet-object {planet.id}"
+	style="background: url({planet.image}.png) no-repeat center"
 	bind:this={ref}
 />
 
@@ -15,5 +15,50 @@
 		background-size: cover;
 		border-radius: 50%;
 		z-index: 1;
+	}
+
+	.moon {
+		width: 25px;
+		height: 25px;
+	}
+
+	.mercury {
+		width: 33px;
+		height: 33px;
+	}
+
+	.venus {
+		width: 90px;
+		height: 90px;
+	}
+
+	.mars {
+		width: 50px;
+		height: 50px;
+	}
+
+	.jupiter {
+		width: 300px;
+		height: 300px;
+	}
+
+	.saturn {
+		width: 640px;
+		height: 470px;
+	}
+
+	.uranus {
+		width: 180px;
+		height: 180px;
+	}
+
+	.neptune {
+		width: 150px;
+		height: 150px;
+	}
+
+	.pluto {
+		width: 25px;
+		height: 25px;
 	}
 </style>

@@ -162,4 +162,18 @@
 		background: rgba(0, 0, 0, 0.4);
 		z-index: 0;
 	}
+
+	@media only screen and (max-width: 962px) {
+		.earth {
+			width: 50px;
+			height: 50px;
+		}
+	}
+
+	@media only screen and (max-width: 480px) {
+		.earth {
+			width: 40px;
+			height: 40px;
+		}
+	}
 </style>
