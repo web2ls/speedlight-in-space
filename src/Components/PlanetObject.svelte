@@ -1,4 +1,5 @@
 <script>
+	// TODO: change Saturn image
 	export let planet;
 	export let ref;
 </script>
@@ -60,5 +61,146 @@
 	.pluto {
 		width: 25px;
 		height: 25px;
+	}
+
+	@media only screen and (max-width: 1200px) {
+		.moon {
+			width: 25px;
+			height: 25px;
+		}
+
+		.mercury {
+			width: 33px;
+			height: 33px;
+		}
+
+		.venus {
+			width: 50px;
+			height: 50px;
+		}
+
+		.mars {
+			width: 40px;
+			height: 40px;
+		}
+
+		.jupiter {
+			width: 110px;
+			height: 110px;
+		}
+
+		.saturn {
+			width: 640px;
+			height: 470px;
+		}
+
+		.uranus {
+			width: 100px;
+			height: 100px;
+		}
+
+		.neptune {
+			width: 80px;
+			height: 80px;
+		}
+
+		.pluto {
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+	@media only screen and (max-width: 962px) {
+		.moon {
+			width: 25px;
+			height: 25px;
+		}
+
+		.mercury {
+			width: 33px;
+			height: 33px;
+		}
+
+		.venus {
+			width: 50px;
+			height: 50px;
+		}
+
+		.mars {
+			width: 40px;
+			height: 40px;
+		}
+
+		.jupiter {
+			width: 110px;
+			height: 110px;
+		}
+
+		.saturn {
+			width: 640px;
+			height: 470px;
+		}
+
+		.uranus {
+			width: 100px;
+			height: 100px;
+		}
+
+		.neptune {
+			width: 80px;
+			height: 80px;
+		}
+
+		.pluto {
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+	@media only screen and (max-width: 480px) {
+		.moon {
+			width: 25px;
+			height: 25px;
+		}
+
+		.mercury {
+			width: 33px;
+			height: 33px;
+		}
+
+		.venus {
+			width: 50px;
+			height: 50px;
+		}
+
+		.mars {
+			width: 40px;
+			height: 40px;
+		}
+
+		.jupiter {
+			width: 110px;
+			height: 110px;
+		}
+
+		.saturn {
+			width: 640px;
+			height: 470px;
+		}
+
+		.uranus {
+			width: 100px;
+			height: 100px;
+		}
+
+		.neptune {
+			width: 80px;
+			height: 80px;
+		}
+
+		.pluto {
+			width: 25px;
+			height: 25px;
+		}
 	}
 </style>
