@@ -127,6 +127,9 @@
 		font-weight: 700;
 		color: var(--orange);
 		letter-spacing: 1px;
+		border-right: 1px solid var(--orange);
+		line-height: 50px;
+		padding-right: 10px;
 	}
 
 	.header {
@@ -202,6 +205,12 @@
 
 		.tablet-stats {
 			display: flex;
+		}
+	}
+
+	@media only screen and (max-width: 420px) and (orientation: portrait) {
+		.tablet-stats {
+			display: none;
 		}
 	}
 </style>
