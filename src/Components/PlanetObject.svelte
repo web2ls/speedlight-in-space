@@ -6,7 +6,7 @@
 
 <div
 	class="planet-object {planet.id}"
-	style="background: url({planet.image}.png) no-repeat center"
+	style="background: url({planet.image}.png) no-repeat center; background-size: cover"
 	bind:this={ref}
 />
 
@@ -137,8 +137,8 @@
 		}
 
 		.saturn {
-			width: 640px;
-			height: 470px;
+			width: 100px;
+			height: 100px;
 		}
 
 		.uranus {
@@ -184,8 +184,8 @@
 		}
 
 		.saturn {
-			width: 640px;
-			height: 470px;
+			width: 80px;
+			height: 80px;
 		}
 
 		.uranus {

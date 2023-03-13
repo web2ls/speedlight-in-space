@@ -1,6 +1,4 @@
 <script>
-	// TODO: разделить футер на десктоп и мобильную версию
-	// TODO убрать компонент FooterItem и заменить его статикой
 	import FooterItem from './FooterItem.svelte';
 
 	export let selectedPlanet;
