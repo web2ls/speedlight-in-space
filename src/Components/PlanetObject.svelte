@@ -1,5 +1,4 @@
 <script>
-	// TODO: change Saturn image
 	export let planet;
 	export let ref;
 </script>

@@ -6,7 +6,7 @@
 
 	import planetObjects from '../assets/data/objects.json';
 
-	// TODO: возможно стоит вывести иконку с информацией по которой можно переходить на роут с информацией о планете
+	// TODO: Icon with route with info about each of the planet
 	const formatSpeedValue = (value) => {
 		let result = '';
 		let counter = 0;

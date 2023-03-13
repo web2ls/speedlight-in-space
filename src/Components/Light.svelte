@@ -1,5 +1,6 @@
 <script>
-	// TODO: Для Луны убрать ускорение с высоким коэфф. так как и ткк слишком быстро
+	// TODO: Think about limit speed for the Moon object,
+	// because it has low distance
 
 	import { onMount } from 'svelte';
 
