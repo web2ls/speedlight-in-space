@@ -136,7 +136,7 @@
 		width: 100%;
 		height: 100vh;
 		position: relative;
-		background: url(background.jpg) no-repeat center;
+		background: url(/background.jpg) no-repeat center;
 		background-size: cover;
 	}
 
@@ -147,7 +147,7 @@
 		align-items: center;
 		width: 100px;
 		height: 100px;
-		background: url(earth.png) no-repeat center;
+		background: url(/earth.png) no-repeat center;
 		background-size: cover;
 		border-radius: 50%;
 		z-index: 10;
