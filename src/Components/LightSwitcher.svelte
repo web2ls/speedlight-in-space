@@ -85,8 +85,8 @@
 
 	@media only screen and (max-width: 1200px) and (orientation: landscape) {
 		.light-switcher {
-			width: 30px;
-			height: 30px;
+			width: 35px;
+			height: 35px;
 		}
 
 		.light-switcher svg {

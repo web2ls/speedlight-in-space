@@ -31,5 +31,11 @@
 			left: 50%;
 			transform: translateX(-50%);
 		}
+
+		@media only screen and (max-width: 1200px) {
+			.hud {
+				padding: 5px;
+			}
+		}
 	}
 </style>

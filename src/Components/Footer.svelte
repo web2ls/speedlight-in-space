@@ -206,6 +206,24 @@
 		}
 	}
 
+	@media only screen and (max-width: 962px) {
+		.footer {
+			height: 50px;
+		}
+
+		.name {
+			font-size: 16px;
+		}
+
+		.header {
+			font-size: 14px;
+		}
+
+		.value {
+			font-size: 14px;
+		}
+	}
+
 	@media only screen and (max-width: 420px) and (orientation: portrait) {
 		.tablet-stats {
 			display: none;

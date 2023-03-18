@@ -57,10 +57,11 @@
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		padding: 0;
-		text-align: center;
 		width: 100%;
 		height: 35px;
+		padding: 0;
+		text-align: center;
+		color: var(--orange);
 	}
 
 	.planet-list {
